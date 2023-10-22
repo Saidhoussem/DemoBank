@@ -1,0 +1,16 @@
+<resources>
+    <string name="account_screen_title">Mes comptes</string>
+    <string name="ca_bank">Credit Agricole</string>
+    <string name="other_bank">Autres Banques</string>
+
+
+    <string name="back">Back</string>
+    <string name="account_details">Mes comptes</string>
+    <string name="account_amount">111.0 </string>
+    <string name="account_title">Account title</string>
+    <string name="empty_account_screen">Pas des comptes</string>
+    <string name="loading">Loading</string>
+    <string name="account_details_issue">No Operations</string>
+    <string name="euro"> € </string>
+
+</resources>
