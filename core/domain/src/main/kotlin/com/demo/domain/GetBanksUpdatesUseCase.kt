@@ -12,7 +12,7 @@ class GetBanksUpdatesUseCase @Inject constructor(
 ) {
     suspend operator fun invoke() {
         //Sync must be with WorkManager
-        // bankRepository.getBanksUpdates()
+         bankRepository.getBanksUpdates()
 
     }
 
