@@ -25,7 +25,7 @@ class AccountDetailsViewModel @Inject constructor(
     private val accountId = accountArgs.accountId
 
     val uiState : StateFlow<AccountDetailsUiState> =
-        getOperationsUseCase.invoke(accountId.toLong()).map(
+        getOperationsUseCase.invoke(accountId).map(
             AccountDetailsUiState::Success
         ).stateIn(
             scope = viewModelScope,

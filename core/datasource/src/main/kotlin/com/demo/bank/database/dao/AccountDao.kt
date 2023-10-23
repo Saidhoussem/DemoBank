@@ -22,6 +22,6 @@ interface AccountDao {
 
     @Transaction
     @Query("SELECT  * FROM ${AccountEntity.TableInfo.TABLE_NAME} WHERE  ${AccountEntity.TableInfo.ACCOUNT_ID} = :accountId")
-    fun getAccountWithOperationsByAccountId(accountId : Long): Flow<AccountWithOperations>
+    fun getAccountWithOperationsByAccountId(accountId : String): Flow<AccountWithOperations>
 
 }

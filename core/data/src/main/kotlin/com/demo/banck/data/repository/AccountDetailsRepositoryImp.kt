@@ -8,7 +8,7 @@ import javax.inject.Inject
 class AccountDetailsRepositoryImp @Inject constructor(
     private val accountDao: AccountDao)
     : AccountRepository{
-    override fun getAccountWithOperationsByAccountId(accountId: Long): Flow<AccountWithOperations> {
+    override fun getAccountWithOperationsByAccountId(accountId: String): Flow<AccountWithOperations> {
        return accountDao.getAccountWithOperationsByAccountId(accountId)
     }
 

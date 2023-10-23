@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface AccountRepository {
 
-    fun getAccountWithOperationsByAccountId(accountId : Long) : Flow<AccountWithOperations>
+    fun getAccountWithOperationsByAccountId(accountId : String) : Flow<AccountWithOperations>
 
 }

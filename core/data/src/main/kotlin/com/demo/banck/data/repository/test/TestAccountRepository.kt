@@ -11,7 +11,7 @@ class TestAccountRepository : AccountRepository{
 
     private val accountFlow: MutableSharedFlow<AccountWithOperations> =
         MutableSharedFlow(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
-    override fun getAccountWithOperationsByAccountId(accountId: Long) = accountFlow
+    override fun getAccountWithOperationsByAccountId(accountId: String) = accountFlow
 
 
 

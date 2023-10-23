@@ -12,9 +12,11 @@ import javax.inject.Inject
 class GetAccountDetailsUseCase @Inject constructor(
     private val accountRepository: AccountRepository,
 ) {
-    operator fun invoke(accountId: Long): Flow<Account> {
+    operator fun invoke(accountId: String): Flow<Account> {
+        Log.d("TESTTEST", "account id = ${accountId}")
 
       return accountRepository.getAccountWithOperationsByAccountId(accountId).map { account ->
+          Log.d("TESTTEST", "account id = ${account.accountEntity.id}")
           //RG05 : La liste est ordonnée par date : l’opération la plus récente est en haut de la liste.
           //RG06: Si deux opérations ont la même date, afficher par ordre alphabétique.
             val operations =
