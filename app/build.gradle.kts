@@ -38,7 +38,6 @@ android {
 
 dependencies {
 
-    implementation (libs.androidx.core.ktx)
     implementation (libs.androidx.activity.compose)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.navigation.compose)
@@ -48,9 +47,5 @@ dependencies {
     implementation(project(mapOf("path" to ":feature:simulator")))
     implementation(project(mapOf("path" to ":core:domain")))
     implementation(project(mapOf("path" to ":core:model")))
-    implementation(libs.hilt.ext.work)
-    testImplementation (libs.junit4)
-    androidTestImplementation (libs.androidx.test.ext )
-    androidTestImplementation (libs.androidx.test.espresso.core)
 
 }

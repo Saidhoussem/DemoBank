@@ -9,15 +9,9 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
     implementation(project(mapOf("path" to ":core:datasource")))
     implementation(project(mapOf("path" to ":core:model")))
-    implementation(libs.google.gson)
 
-    implementation(libs.material)
-    implementation(libs.androidx.work.runtime.ktx)
     testImplementation(libs.junit4)
     androidTestImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.espresso.core)
 }

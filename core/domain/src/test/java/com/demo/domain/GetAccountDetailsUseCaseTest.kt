@@ -8,7 +8,6 @@ import com.demo.domain.test.MainDispatcherRule
 import com.demobank.model.Account
 import com.demobank.model.Operations
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
 import org.junit.Rule
