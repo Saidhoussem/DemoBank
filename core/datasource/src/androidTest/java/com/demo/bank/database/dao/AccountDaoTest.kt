@@ -9,6 +9,7 @@ import com.demo.bank.database.entities.AccountEntity
 import com.demo.bank.database.entities.OperationEntity
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.runTest
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -28,6 +29,12 @@ class AccountDaoTest {
         ).build()
         accountDao = bankDb.accountDao()
         operationDao = bankDb.operationDao()
+    }
+
+
+    @After
+    fun closeDatabase() {
+        bankDb.close()
     }
 
     @Test
@@ -68,7 +75,7 @@ class AccountDaoTest {
 
 
     @Test
-    fun accountDao_insert_account_with_operation() = runTest {
+    fun accountDao_insert_account_with_operations() = runTest {
        val accounts = listOf( testAccount(
             id = "1234567",
             bankId = 1,

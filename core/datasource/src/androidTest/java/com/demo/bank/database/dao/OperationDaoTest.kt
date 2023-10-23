@@ -9,6 +9,7 @@ import com.demo.bank.database.BankDatabase
 import com.demo.bank.database.entities.AccountEntity
 import com.demo.bank.database.entities.OperationEntity
 import kotlinx.coroutines.test.runTest
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -28,6 +29,11 @@ class OperationDaoTest {
         operationDao = bankDb.operationDao()
     }
 
+
+    @After
+    fun closeDatabase() {
+        bankDb.close()
+    }
     @Test
     fun operationDao_insert_items() = runTest {
         val operationEntities = listOf(

@@ -18,7 +18,7 @@ class GetAccountDetailsUseCase @Inject constructor(
           //RG05 : La liste est ordonnée par date : l’opération la plus récente est en haut de la liste.
           //RG06: Si deux opérations ont la même date, afficher par ordre alphabétique.
             val operations =
-                account.operations?.sortedWith(compareBy({ it.date }, { it.title }))?.map {
+                account.operations?.sortedWith(compareByDescending<OperationEntity> { it.timesTemp }.thenBy { it.title })?.map {
 
                     it.toOperation()
                 }
@@ -31,7 +31,7 @@ class GetAccountDetailsUseCase @Inject constructor(
     }
 }
 
-    private fun OperationEntity.toOperation() = Operations(
+    fun OperationEntity.toOperation() = Operations(
         id = id,
         accountId = accountId,
         title = title,

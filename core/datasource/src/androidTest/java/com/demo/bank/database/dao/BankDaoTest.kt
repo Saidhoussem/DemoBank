@@ -9,6 +9,7 @@ import com.demo.bank.database.entities.AccountEntity
 import com.demo.bank.database.entities.BankEntity
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.runTest
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -30,6 +31,11 @@ class BankDaoTest {
         accountDao = bankDb.accountDao()
     }
 
+
+    @After
+    fun closeDatabase() {
+        bankDb.close()
+    }
     @Test
     fun bankDao_insert_and_get_bank() = runTest {
         val bank = testBank(
