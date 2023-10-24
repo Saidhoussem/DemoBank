@@ -16,6 +16,10 @@ dependencies {
     implementation(libs.material)
     implementation(project(mapOf("path" to ":core:domain")))
     implementation(project(mapOf("path" to ":core:data")))
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlin.reflect)
+
+    testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.junit4)
     androidTestImplementation(libs.junit)
 }

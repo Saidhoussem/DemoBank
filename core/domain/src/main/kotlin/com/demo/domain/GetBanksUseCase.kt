@@ -10,10 +10,10 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 
-class GetBanksUseCase @Inject constructor(
+open class GetBanksUseCase @Inject constructor(
     private val bankRepository: BankRepository
 ) {
-    operator fun invoke(): Flow<List<Bank>> {
+    open operator fun invoke(): Flow<List<Bank>> {
 
         return bankRepository.loadData().map { bankWithAccountsList ->
 
